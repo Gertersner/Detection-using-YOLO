@@ -37,8 +37,9 @@ def main():
     data_config = """
     train: ./BoneFractureYolo8/train/images
     val: ./BoneFractureYolo8/valid/images
-    nc: 3
-    names: ['No Fracture', 'Fracture Type A', 'Fracture Type B']
+    nc: 6  # Number of classes
+    names: ['class0', 'class1', 'class2', 'class3', 'class4', 'class5']  # Update with actual class names
+
     """
 
     # Save the configuration to a file
@@ -52,7 +53,7 @@ def main():
         batch=32,
         imgsz=640,
         name='fracture_detector',
-        lr0=0.001,
+        lr0=0.01,
         device=0
     )
 
